@@ -59,10 +59,15 @@ apt install -y nmap
 #                QUALITY OF LIFE                #
 #################################################
 
+# terminal prompt
+apt install libssl-dev
+apt install pkg-config
 cargo install starship
 
+# better cat (pretty colours)
 cargo install bat
 
+# better hd (pretty colours)
 cargo install hexyl
 
 #################################################
