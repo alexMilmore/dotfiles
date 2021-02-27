@@ -7,6 +7,9 @@ cp -r ../config/. ~/.config/.
 nvim +'PlugInstall --sync' +qa
 
 ### symlings for config files
+# bash
+ln -s ~/.config/bash/bashrc ~/.bashrc
+
 # zshell
 ln -s ~/.config/zsh/.zshrc ~/.zshrc
 ln -s ~/.config/zsh/.zshenv ~/.zshenv
