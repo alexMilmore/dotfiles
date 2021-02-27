@@ -5,22 +5,22 @@ apt update
 ##############
 
 # terminal emulator
-apt install kitty
+apt install -y kitty
 
 # text editor
-apt install neovim
+apt install -y neovim
 
 # terminal multiplexor
-apt install tmux
+apt install -y tmux
 
 # window manager
-apt install i3
+apt install -y i3
 
 # web browser
-apt install firefox
+apt install -y firefox
 
 # shell
-apt install zsh
+apt install -y zsh
 
 #########################
 # PROGRAMMING LANGUAGES #
@@ -30,7 +30,7 @@ apt install zsh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # haskell
-apt install haskell-platform
+apt install -y haskell-platform
 
 
 ###################
@@ -42,4 +42,7 @@ apt install haskell-platform
 #######
 
 # better looking top command
-apt install htop
+apt install -y htop
+
+# better screenfetch
+apt install -y neofetch
