@@ -1,8 +1,15 @@
+#################################################
+#  EVERYTHING YOU SHOULD NEED ON A NEW MACHINE  #
+#################################################
+
 apt update
 
-##############
-# ESSENTIALS #
-##############
+#################################################
+#                  ESSENTIALS                   #
+#################################################
+
+# I'm amazed curl isn't in debian
+apt install -y curl
 
 # terminal emulator
 apt install -y kitty
@@ -22,9 +29,15 @@ apt install -y firefox
 # shell
 apt install -y zsh
 
-#########################
-# PROGRAMMING LANGUAGES #
-#########################
+# view pictures
+apt install -y feh
+
+# screenshot
+apt install -y scrot
+
+#################################################
+#             PROGRAMMING LANGUAGES             #
+#################################################
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -32,17 +45,34 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # haskell
 apt install -y haskell-platform
 
+#################################################
+#                  USEFUL TOOLS                 #
+#################################################
 
-###################
-# QUALITY OF LIFE #
-###################
+apt install nmap
 
-#######
-# FUN #
-#######
+#################################################
+#                QUALITY OF LIFE                #
+#################################################
+
+cargo install starship
+
+cargo install bat
+
+cargo install hexyl
+
+#################################################
+#                    FUN                        #
+#################################################
 
 # better looking top command
 apt install -y htop
 
 # better screenfetch
 apt install -y neofetch
+
+# enter the matrix
+apt install -y cmatrix
+
+# fancy ascii letters
+apt install -y figlet
