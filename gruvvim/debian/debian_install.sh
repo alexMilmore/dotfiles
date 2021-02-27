@@ -17,7 +17,7 @@ apt install -y kitty
 # text editor
 apt install -y neovim
 # neovim plugins
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+su amilmore -c sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # terminal multiplexor
@@ -43,8 +43,8 @@ apt install -y scrot
 ###########################################################
 
 # rust
-curl https://sh.rustup.rs -sSf | sh -s -- -y
-source $HOME/.cargo/env
+su - amilmore -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
+su - amilmore -c "source $HOME/.cargo/env"
 
 # haskell
 apt install -y haskell-platform
@@ -57,8 +57,8 @@ apt install -y haskell-platform
 apt install -y nmap
 
 # fuzzy finder
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+su - amilmore -c "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
+su - amilmore -c "~/.fzf/install"
 
 ###########################################################
 #                     QUALITY OF LIFE                     #
@@ -67,13 +67,13 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # terminal prompt
 apt install -y libssl-dev
 apt install -y pkg-config
-~/.cargo/bin/cargo install starship
+su - amilmore -c "~/.cargo/bin/cargo install starship"
 
 # better cat (pretty colours)
-~/.cargo/bin/cargo install bat
+su - amilmore -c "~/.cargo/bin/cargo install bat"
 
 # better hd (pretty colours)
-~/.cargo/bin/cargo install hexyl
+su - amilmore -c "~/.cargo/bin/cargo install hexyl"
 
 ###########################################################
 #                         FUN                             #
