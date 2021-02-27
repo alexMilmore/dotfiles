@@ -16,6 +16,9 @@ apt install -y kitty
 
 # text editor
 apt install -y neovim
+# neovim plugins
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # terminal multiplexor
 apt install -y tmux
