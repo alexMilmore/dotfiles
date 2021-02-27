@@ -11,8 +11,7 @@ nvim +'PlugInstall --sync' +qa
 ln -s ~/.config/bash/bashrc ~/.bashrc
 
 # zshell
-ln -s ~/.config/zsh/.zshrc ~/.zshrc
-ln -s ~/.config/zsh/.zshenv ~/.zshenv
+ln -s ~/.config/zsh/zshrc ~/.zshrc
 
 # tmux
-ln -s ~/.config/.tmux.conf ~/.tmux.conf
+ln -s ~/.config/tmux.conf ~/.tmux.conf
