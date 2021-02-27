@@ -60,8 +60,8 @@ apt install -y nmap
 #################################################
 
 # terminal prompt
-apt install libssl-dev
-apt install pkg-config
+apt install -y libssl-dev
+apt install -y pkg-config
 cargo install starship
 
 # better cat (pretty colours)
