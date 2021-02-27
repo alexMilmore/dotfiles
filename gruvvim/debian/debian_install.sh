@@ -50,7 +50,7 @@ apt install -y haskell-platform
 #                  USEFUL TOOLS                 #
 #################################################
 
-apt install nmap
+apt install -y nmap
 
 #################################################
 #                QUALITY OF LIFE                #
