@@ -62,13 +62,13 @@ apt install -y nmap
 # terminal prompt
 apt install -y libssl-dev
 apt install -y pkg-config
-cargo install starship
+~/.cargo/bin/cargo install starship
 
 # better cat (pretty colours)
-cargo install bat
+~/.cargo/bin/cargo install bat
 
 # better hd (pretty colours)
-cargo install hexyl
+~/.cargo/bin/cargo install hexyl
 
 #################################################
 #                    FUN                        #
