@@ -44,7 +44,6 @@ apt install -y scrot
 
 # rust
 su - amilmore -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
-su - amilmore -c "source $HOME/.cargo/env"
 
 # haskell
 apt install -y haskell-platform
