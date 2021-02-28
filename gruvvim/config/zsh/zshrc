@@ -45,5 +45,7 @@ export EDITOR="nvim"
 alias vim="nvim"
 alias cat="bat"
 alias hd="hexyl"
+alias top="htop"
+alias screenfetch="neofetch"
 
 
