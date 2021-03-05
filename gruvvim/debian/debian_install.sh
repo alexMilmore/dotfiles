@@ -59,6 +59,21 @@ apt install -y nmap
 su - amilmore -c "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
 su - amilmore -c "~/.fzf/install"
 
+# tmate, tmux shared terminal session
+apt install -y tmate
+
+# doom emacs
+apt install -y emacs
+sy - amilmore -c "git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d"
+sy - amilmore -c "~/.emacs.d/bin/doom install"
+
+# latex
+apt install -y texlive
+apt install -y texlinve-latex-extra
+
+# plantUML
+apt install -y plantuml
+
 ###########################################################
 #                     QUALITY OF LIFE                     #
 ###########################################################

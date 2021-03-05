@@ -18,3 +18,9 @@ ln -s ~/.config/zsh/zshrc ~/.zshrc
 # tmux
 rm ~/.tmux.conf
 ln -s ~/.config/tmux.conf ~/.tmux.conf
+
+# tmate
+rm ~/.tmate.conf
+ln -s ~/.config/tmate.conf ~/.tmate.conf
+
+# doom emacs
