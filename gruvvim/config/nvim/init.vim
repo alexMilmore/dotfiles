@@ -15,15 +15,23 @@ set smartindent
 set nu
 
 """custom bindings for default vim
+
 ""basics
 "used instead of mapleader so "\" shows up when typed
 map <Space> <leader>
+"quit
 nnoremap <leader>q :q<CR>
+"write
 nnoremap <leader>w :w<CR>
+"open terminal
+nnoremap <leader>t :terminal<CR>
+"autocomplete
+inoremap <M-p> <C-P>
+
 ""tabs
-nnoremap <leader>t :tabnew<Space>
 nnoremap <M-u> :tabprevious<CR>
 nnoremap <M-i> :tabnext<CR>
+
 ""vim split
 "navigation
 nnoremap <M-h> <C-W>h
@@ -54,11 +62,9 @@ Plug 'cespare/vim-toml'
 Plug 'szw/vim-maximizer'
 "vim debugger
 Plug 'puremourning/vimspector'
-"
-Plug 'nvim-lua/popup.nvim'
-"
-Plug 'nvim-lua/plenary.nvim'
 "vim fuzzy finder
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
@@ -89,3 +95,10 @@ nnoremap <leader>dn :call vimspector#Continue()<CR>
 nnoremap <leader>drc :call vimspector#RunToCursor()<CR>
 nnoremap <leader>db :call vimspector#ToggleBreakpoint()<CR>
 nnoremap <leader>dcb :call vimspector#ToggleConditionalBreakpoint()<CR>
+
+""Telescope bindings
+nnoremap <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <leader>ftf :tabnew \| Telescope find_files<CR>
+nnoremap <leader>fg <cmd>Telescope live_grep<CR>
+nnoremap <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <leader>fh <cmd>Telescope help_tags<CR>

@@ -74,6 +74,9 @@ apt install -y texlinve-latex-extra
 # plantUML
 apt install -y plantuml
 
+# minimal dhcp
+apt install -y dhcpcd5
+
 ###########################################################
 #                     QUALITY OF LIFE                     #
 ###########################################################
@@ -85,6 +88,9 @@ su - amilmore -c "~/.cargo/bin/cargo install starship"
 
 # better cat (pretty colours)
 su - amilmore -c "~/.cargo/bin/cargo install bat"
+
+# better grep (faster)
+su - amilmore -c "~/.cargo/bin/cargo install ripgrep"
 
 # better hd (pretty colours)
 su - amilmore -c "~/.cargo/bin/cargo install hexyl"
@@ -104,3 +110,6 @@ apt install -y cmatrix
 
 # fancy ascii letters
 apt install -y figlet
+
+# rainbow terminal output
+apt install -y lolcat
