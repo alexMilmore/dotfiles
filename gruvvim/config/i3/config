@@ -41,6 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
+# bindsym $mod+Return exec urxvt
 bindsym $mod+Return exec kitty
 
 # kill focused window
@@ -179,8 +180,8 @@ bindsym $mod+r mode "resize"
 ##################
 
 # screenshots and screen recording
-bindsym Print exec scrot ~/Pictures/screenshot.png
-bindsym Shift+Print exec scrot -u ~/Pictures/windowshot.png
+#bindsym Print exec scrot ~/Pictures/screenshot.png
+#bindsym Shift+Print exec scrot -u ~/Pictures/windowshot.png
 
 
 #######

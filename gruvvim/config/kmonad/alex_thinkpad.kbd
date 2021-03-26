@@ -1,0 +1,91 @@
+#| --------------------------------------------------------------------------
+
+                         KMonad: ISO ThinkPad X220 Template
+
+   This file contains US and DE `defsrc' configurations for a ThinkPad X220
+   with an ISO keyboard.  Copy out the `defsrc' layer to start your own
+   keyboard configuration.  Copy out the `deflayer' template to easily start
+   a new layer with matching `transparent' buttons.
+
+;; Template
+(deflayer name
+  _    _    _    _                             _    _    _    _    _    _    _
+       _    _    _    _    _    _    _    _    _    _    _    _         _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _              _
+  _    lctl    lmet   lalt              _              ralt    _    rctl         _    _    _
+                                                                   _    _    _
+)
+
+  -------------------------------------------------------------------------- |#
+
+(defcfg
+  input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  output (uinput-sink "KMonad_keyboard")
+  allow-cmd true
+  )
+
+
+;; Base Keyboard
+(deflayer base
+  caps mute vold volu                          prnt slck pause ins del  home pgup
+       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12      end  pgdn
+  grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [     ]        ret
+  esc  a    s    d    f    g    h    j    k    l    ;    '     \
+  lalt 102d z    x    c    v    b    n    m    ,    .    /              bspc
+  wkup lctl lmet lshift           spc            @sym @num  rctl      back up   fwd
+                                                                   left down rght
+)
+
+;; Easy Acess Symbols
+(deflayer sym
+  _    _    _    _                             _    _    _    _    _    _    _
+       _    _    _    _    _    _    _    _    _    _    _    _         _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    <    [    {   \(    _   \\    |   \\    !    _    _    _         _
+  _    >    ]    }   \)    _    ^    _    _    $    _    _    _
+  _    _    _    _    @ret _    _    _    _    _    _    _              bspc
+  _    lctl    lmet   lalt              _              _    _    _         _    _    _
+                                                                   _    _    _
+)
+
+;; Numpad
+(deflayer num
+  _    _    _     _                             _    _    _    _    _    _    _
+       _    _     _    _    _    _    _    _    _    _    _    _         _    _
+  _    _    _     _    _    _    _    _    _    _    _    _    _         _
+  _    +    -     *    /    %    _    7    8    9    _    _    _         _
+  _    ^    @sqrt @log @ln  _    _    4    5    6    _    _    _
+  _    _    @sin @cos  @tan _    _    _    1    2    3    _              bspc
+  _    lctl    lmet   lalt              0              _    _    _         _    _    _
+                                                                   _    _    _
+)
+
+(defalias
+sym (layer-toggle sym)
+num (layer-toggle num)
+;; common words
+ret #(r e t u r n)
+;; maths functions
+sin #(s i n \( )
+cos #(c o s \( )
+tan #(t a n \( )
+sqrt #(s q r t \( )
+log #(l o g \( )
+ln #(l n \( )
+)
+
+;; US
+(defsrc
+  esc  mute vold volu                          prnt slck pause ins del  home pgup
+       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12      end  pgdn
+  grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [     ]        ret
+  caps a    s    d    f    g    h    j    k    l    ;    '     \
+  lsft 102d z    x    c    v    b    n    m    ,    .    /              rsft
+  wkup lctl lmet lalt           spc            ralt ssrq rctl      back up   fwd
+                                                                   left down rght
+)

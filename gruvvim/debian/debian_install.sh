@@ -38,6 +38,13 @@ apt install -y feh
 # screenshot
 apt install -y scrot
 
+# keyboard manager
+# install stack package manager
+curl -sSL https://get.haskellstack.org/ | sh
+# install kmonad
+git clone https://github.com/david-janssen/kmonad.git
+stack build kmonad
+
 ###########################################################
 #                   PROGRAMMING LANGUAGES                 #
 ###########################################################

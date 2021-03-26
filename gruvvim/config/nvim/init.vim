@@ -46,6 +46,13 @@ nnoremap <M-H> <C-W>>
 nnoremap <M-J> <C-W>-
 nnoremap <M-K> <C-W>+
 nnoremap <M-L> <C-W><
+"open file into terminal
+nnoremap <leader>o- <C-W>f
+nnoremap <leader>o/ <C-W>vgf
+
+"""language support
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
 
 """vim plugins
 call plug#begin('~/.vim/plugged')
@@ -66,6 +73,16 @@ Plug 'puremourning/vimspector'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+"ros tools for vim
+Plug 'taketwo/vim-ros'
+"better quotes, brackets, xml etc
+Plug 'tpope/vim-surround'
+"better commenting
+Plug 'tpope/vim-commentary'
+"better git
+Plug 'tpope/vim-fugitive'
+"linter
+Plug 'dense-analysis/ale' 
 
 call plug#end()
 
