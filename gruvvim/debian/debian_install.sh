@@ -40,10 +40,12 @@ apt install -y scrot
 
 # keyboard manager
 # install stack package manager
+# install stack (used to install kmonad)
 curl -sSL https://get.haskellstack.org/ | sh
 # install kmonad
-git clone https://github.com/david-janssen/kmonad.git
-stack build kmonad
+# TODO for some reason this kills my vm, fix this
+#git clone https://github.com/david-janssen/kmonad.git
+#stack build kmonad
 
 ###########################################################
 #                   PROGRAMMING LANGUAGES                 #
@@ -54,6 +56,28 @@ su - amilmore -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
 
 # haskell
 apt install -y haskell-platform
+
+###########################################################
+#                   NVIM LANGUAGE SERVERS                 #
+###########################################################
+
+# node for language server
+su - amilmore -c "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash"
+su - amilmore 'export NVM_DIR="/home/alex/.nvm"'
+su - amilmore '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
+su - amilmore "nvm install node"
+
+# rust language server
+su - amilmore "rustup component add rls rust-analysis rust-src"
+
+# python language server
+su - amilmore "npm install -g pyright"
+
+# c/c++ language server
+# TODO
+
+# haskell language server
+# TODO
 
 ###########################################################
 #                       USEFUL TOOLS                      #
