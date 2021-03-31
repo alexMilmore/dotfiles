@@ -49,12 +49,33 @@
 (defalias
 sym (layer-toggle sym)
 num (layer-toggle num)
+shel (layer-toggle shel)
 
 ;; common words
 ret #(r e t u r n)
+slf #(s e l f)
+fslsh (around ralt -)
 pipe (around ralt `)
-home #(| /)
 
+;; shell mode aliases
+home #(| /)
+updir #(. . /)
+pyth #(p y t h o n 3 spc)
+vim #(v i m spc)
+pst (around lshift ins)
+cpy (around lshift (around lalt c))
+ful (around lmet f)
+lft (multi-tap 200 (around lalt h) (around lmet h))
+dwn (multi-tap 200 (around lalt j) (around lmet j))
+up  (multi-tap 200 (around lalt k) (around lmet k))
+rgt (multi-tap 200 (around lalt l) (around lmet l))
+qut (around lmet (around lshift q))
+trm (around lmet ret)
+opn (around lmet d)
+zin (around lctl +)
+zot (around lctl \_)
+
+;; num aliases
 ;; maths functions
 sin #(s i n \( )
 cos #(c o s \( )
@@ -75,21 +96,20 @@ ln #(l n \( )
   tab  q    w    e    r    t    y    u    i    o    p    [     ]        ret
   esc  a    s    d    f    g    h    j    k    l    ;    '     \
   lalt 102d z    x    c    v    b    n    m    ,    .    /              bspc
-  wkup lctl lmet lshift           spc            @sym @num  rctl      back up   fwd
+  wkup lctl @num lshift           spc            @sym @shel  rctl      back up   fwd
                                                                    left down rght
 )
 
 ;; Easy Acess Symbols
 ;; # is £
 ;; ¬ is ~
-;; TODO | key needs to fix
 (deflayer sym
   _    _    _    _                             _    _    _    _    _    _    _
        _    _    _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
-  _    !    @    #    $    %    ^    &    *   \_   \\    ¬    _         _
+  _    !    @    #    $    %    ^    &    *   \_   \\    @fslsh _         _
   _    <    [    {   \(    _    ^    _    _    $    bspc _    _
-  >    _    ]    }   \) _    _    @pipe @home @ret _     _              bspc
+  >    _    ]    }   \)    _    _    _    @slf @ret _     _                  bspc
   _    lctl    lmet   ralt              _              _    _    _         _    _    _
                                                                    _    _    _
 )
@@ -99,11 +119,22 @@ ln #(l n \( )
   _    _    _     _                             _    _    _    _    _    _    _
        _    _     _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _     _    _    _    _    _    _    _    _    _    _         _
-  _    +    -     *    /    %    _    7    8    9    _    _    _         _
-  _    ^    @sqrt @log @ln  _    _    4    5    6    _    _    _
-  _    _    @sin @cos  @tan _    _    _    1    2    3    _              bspc
-  _    lctl    lmet   lalt              0              _    _    _         _    _    _
+  _    ^    @sqrt @log @ln @sin _    7    8    9    _    _    _         _
+  _    %    *     +    =  @cos _    4    5    6    _    _    _
+  lmet _    /    -     @tan _    _    0    1    2    3    _              bspc
+  _    lctl    lmet   lalt              _              _    lmet  _         _    _    _
                                                                    _    _    _
 )
 
+;; Navigating in the shell
+(deflayer shel
+  _    _    _    _                             _    _    _    _    _    _    _
+       _    _    _    _    _    _    _    _    _    _    _    _         _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    @qut _    _    _    @trm _    _    _    @zot @zin _    _         _
+  _    _    _    @opn @ful _    @lft @dwn @up  @rgt _    _    _
+  lmet _    _    _    @cpy @pst _    @pipe @home @updir @vim  @pyth             _
+  _    lctl    lmet   lalt              _              ralt    _    rctl         _    _    _
+                                                                   _    _    _
+)
 
