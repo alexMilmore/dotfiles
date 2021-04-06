@@ -51,6 +51,10 @@ sym (layer-toggle sym)
 num (layer-toggle num)
 shel (layer-toggle shel)
 
+;; normal mode aliases
+sctl (tap-next (around-next lctl) lshift)
+winum (tap-next (around-next lmet) @num)
+
 ;; common words
 ret #(r e t u r n)
 slf #(s e l f)
@@ -96,7 +100,7 @@ ln #(l n \( )
   tab  q    w    e    r    t    y    u    i    o    p    [     ]        ret
   esc  a    s    d    f    g    h    j    k    l    ;    '     \
   lalt 102d z    x    c    v    b    n    m    ,    .    /              bspc
-  wkup lctl @num lshift           spc            @sym @shel  rctl      back up   fwd
+  lctl wkup @winum @sctl           spc            @sym @shel  rctl      back up   fwd
                                                                    left down rght
 )
 
