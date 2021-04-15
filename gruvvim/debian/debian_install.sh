@@ -58,6 +58,18 @@ su - amilmore -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
 apt install -y haskell-platform
 
 ###########################################################
+#                      PYTHON PACKAGES                    #
+###########################################################
+
+# install pip
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py | python
+apt install python3-pip
+
+# allows neovim to use python plugins
+pip install pynvim
+pip3 install pynvim
+
+###########################################################
 #                   NVIM LANGUAGE SERVERS                 #
 ###########################################################
 
