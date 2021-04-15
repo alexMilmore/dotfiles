@@ -112,8 +112,8 @@ ln #(l n \( )
        _    _    _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
   _    !    @    #    $    %    ^    &    *   \_   \\    @fslsh _         _
-  _    <    [    {   \(    _    ^    _    _    $    bspc _    _
-  >    >    ]    }   \)    _    _    _    @slf @ret _     _                  bspc
+  _    <    [    {   \(    _    left down up   rght bspc _    _
+  >    >    ]    }   \)    _    _    _    @slf @ret _    _                  bspc
   _    lctl    lmet   ralt              _              _    _    _         _    _    _
                                                                    _    _    _
 )
