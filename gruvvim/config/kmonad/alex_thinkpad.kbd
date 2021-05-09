@@ -50,14 +50,17 @@
 sym (layer-toggle sym)
 num (layer-toggle num)
 shel (layer-toggle shel)
+caps (layer-toggle caps)
 
 ;; normal mode aliases
-sctl (tap-next (around-next lctl) lshift)
+;; sctl (tap-next (around-next lctl) lshift)
+sctl (tap-next (around-next lctl) (layer-toggle caps))
 winum (tap-next (around-next lmet) @num)
 
 ;; common words
 ret #(r e t u r n)
 slf #(s e l f)
+arw #(- >)
 fslsh (around ralt -)
 pipe (around ralt `)
 
@@ -97,12 +100,27 @@ ln #(l n \( )
   caps mute vold volu                          prnt slck pause ins del  home pgup
        f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12      end  pgdn
   grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [     ]        ret
+  tab  q    w    e    r    t    y    u    i    o    p   \_     ]        ret
   esc  a    s    d    f    g    h    j    k    l    ;    '     \
   lalt 102d z    x    c    v    b    n    m    ,    .    /              bspc
-  lctl wkup @winum @sctl           spc            @sym @shel  rctl      back up   fwd
+  lctl wkup @winum @sctl           spc        @sym @shel  rctl      back up   fwd
                                                                    left down rght
 )
+
+;; Caps Keyboard
+;; caps is different layer to allow stop underscores breaking shift
+(deflayer caps
+  caps mute vold volu                          prnt slck pause ins del  home pgup
+       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12      end  pgdn
+  grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
+  tab  Q    W    E    R    T    Y    U    I    O    P   \_     ]        ret
+  esc  A    S    D    F    G    H    J    K    L    :    '     \
+  lalt 102d Z    X    C    V    B    N    M    <    >    ?              bspc
+  lctl wkup @winum @sctl            \_        @sym @shel  rctl      back up   fwd
+                                                                   left down rght
+)
+
+
 
 ;; Easy Acess Symbols
 ;; # is £
@@ -111,10 +129,10 @@ ln #(l n \( )
   _    _    _    _                             _    _    _    _    _    _    _
        _    _    _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
-  _    !    @    #    $    %    ^    &    *   \_   \\    @fslsh _         _
+  _    !    @    #    $    %    ^    &    *    ~   \\    @fslsh _         _
   _    <    [    {   \(    _    left down up   rght bspc _    _
-  >    >    ]    }   \)    _    _    _    @slf @ret _    _                  bspc
-  _    lctl    lmet   ralt              _              _    _    _         _    _    _
+  >    >    ]    }   \)    _    _    _    @slf @ret @arw  _                  bspc
+  _    lctl    lmet   ralt            bspc             _    _    _         _    _    _
                                                                    _    _    _
 )
 
