@@ -130,8 +130,8 @@ ln #(l n \( )
        _    _    _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
   _    !    @    #    $    %    ^    &    *    ~   \\    @fslsh _         _
-  _    <    [    {   \(    _    left down up   rght bspc _    _
-  >    >    ]    }   \)    _    _    _    @slf @ret @arw  _                  bspc
+  _    <    [    {   \(    _    _   \)    }    ]    >    _    _
+  _    _    _    _    _    _    _    _    @slf @ret @arw  _                  bspc
   _    lctl    lmet   ralt            bspc             _    _    _         _    _    _
                                                                    _    _    _
 )
