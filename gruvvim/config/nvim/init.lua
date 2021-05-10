@@ -15,6 +15,7 @@ require('plugin_config/vimspector')
 require('plugin_config/nerdtree')
 require('plugin_config/maximizer')
 require('plugin_config/lualine')
+require('plugin_config/diffview')
 
 -- lsp
 require('lspconfig')

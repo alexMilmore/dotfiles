@@ -39,6 +39,9 @@ return require("packer").startup(
         use "morhetz/gruvbox"
         use "pineapplegiant/spaceduck" -- { 'branch': 'main' }
 
+        -- Icons
+        use "kyazdani42/nvim-web-devicons"
+
         -- Statusline
         use "hoob3rt/lualine.nvim"
         requires = {"kyazdani42/nvim-web-devicons", opt = true}
@@ -52,6 +55,7 @@ return require("packer").startup(
         -- Better git
         use "tpope/vim-fugitive"
         use "airblade/vim-gitgutter"
+        use "sindrets/diffview.nvim"
 
         -- syntax highlighting for toml
         use 'cespare/vim-toml'
