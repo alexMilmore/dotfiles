@@ -49,7 +49,8 @@
 (defalias
 sym (layer-toggle sym)
 num (layer-toggle num)
-shel (layer-toggle shel)
+;; shel (layer-toggle shel)
+shel (multi-tap 200 (layer-toggle shel) (layer-toggle nav))
 caps (layer-toggle caps)
 
 ;; normal mode aliases
@@ -61,8 +62,12 @@ winum (tap-next (around-next lmet) @num)
 ret #(r e t u r n)
 slf #(s e l f)
 arw #(- >)
+ln; #(; ret)
 fslsh (around ralt -)
 pipe (around ralt `)
+
+;; caps mode wierdness
+stb (around lsft tab)
 
 ;; shell mode aliases
 home #(| /)
@@ -113,7 +118,7 @@ ln #(l n \( )
   caps mute vold volu                          prnt slck pause ins del  home pgup
        f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12      end  pgdn
   grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
-  tab  Q    W    E    R    T    Y    U    I    O    P   \_     ]        ret
+  @stb Q    W    E    R    T    Y    U    I    O    P   \_     ]        ret
   esc  A    S    D    F    G    H    J    K    L    :    '     \
   lalt 102d Z    X    C    V    B    N    M    <    >    ?              bspc
   lctl wkup @winum @sctl            \_        @sym @shel  rctl      back up   fwd
@@ -129,7 +134,7 @@ ln #(l n \( )
   _    _    _    _                             _    _    _    _    _    _    _
        _    _    _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
-  _    !    @    #    $    %    ^    &    *    ~   \\    @fslsh _         _
+  _    !    @    #    $    %    ^    &    *    ~   \\    @fslsh _      @ln;
   _    <    [    {   \(    _    _   \)    }    ]    >    _    _
   _    _    _    _    _    _    _    _    @slf @ret @arw  _                  bspc
   _    lctl    lmet   ralt            bspc             _    _    _         _    _    _
@@ -155,6 +160,18 @@ ln #(l n \( )
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
   _    @qut _    _    _    @trm _    _    _    @zot @zin _    _         _
   _    _    _    @opn @ful _    @lft @dwn @up  @rgt _    _    _
+  lmet _    _    _    @cpy @pst _    @pipe @home @updir @vim  @pyth             _
+  _    lctl    lmet   lalt              _              ralt    _    rctl         _    _    _
+                                                                   _    _    _
+)
+
+;; Navigating (work in progress)
+(deflayer nav
+  _    _    _    _                             _    _    _    _    _    _    _
+       _    _    _    _    _    _    _    _    _    _    _    _         _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    @qut _    _    _    @trm _    _    _    @zot @zin _    _         _
+  _    _    _    @opn @ful _    left down up   rght _    _    _
   lmet _    _    _    @cpy @pst _    @pipe @home @updir @vim  @pyth             _
   _    lctl    lmet   lalt              _              ralt    _    rctl         _    _    _
                                                                    _    _    _
