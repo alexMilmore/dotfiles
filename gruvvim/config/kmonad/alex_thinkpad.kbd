@@ -47,11 +47,20 @@
   -------------------------------------------------------------------------- |#
 ;; Aliases
 (defalias
+
+;; symbol hacks
+;; kmonad won't let certain symbols as src layer, so we need these as hacks
+\ (around ralt -)
+~ (around lshift \\)
+| (around ralt `)
+£ (around lsft #)
+
+;; layers
 sym (layer-toggle sym)
 num (layer-toggle num)
-;; shel (layer-toggle shel)
-shel (multi-tap 200 (layer-toggle shel) (layer-toggle nav))
+shel (layer-toggle shel)
 caps (layer-toggle caps)
+nav (layer-toggle nav)
 
 ;; normal mode aliases
 ;; sctl (tap-next (around-next lctl) lshift)
@@ -63,7 +72,7 @@ ret #(r e t u r n)
 slf #(s e l f)
 arw #(- >)
 ln; #(; ret)
-fslsh (around ralt -)
+nln #(@\ n)
 pipe (around ralt `)
 
 ;; caps mode wierdness
@@ -89,6 +98,7 @@ zot (around lctl \_)
 
 ;; num aliases
 ;; maths functions
+hex #(0 x)
 sin #(s i n \( )
 cos #(c o s \( )
 tan #(t a n \( )
@@ -108,7 +118,7 @@ ln #(l n \( )
   tab  q    w    e    r    t    y    u    i    o    p   \_     ]        ret
   esc  a    s    d    f    g    h    j    k    l    ;    '     \
   lalt 102d z    x    c    v    b    n    m    ,    .    /              bspc
-  lctl wkup @winum @sctl           spc        @sym @shel  rctl      back up   fwd
+  @nav wkup @winum @sctl           spc        @sym @shel  rctl      back up   fwd
                                                                    left down rght
 )
 
@@ -119,7 +129,7 @@ ln #(l n \( )
        f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12      end  pgdn
   grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
   @stb Q    W    E    R    T    Y    U    I    O    P   \_     ]        ret
-  esc  A    S    D    F    G    H    J    K    L    :    '     \
+  esc  A    S    D    F    G    H    J    K    L    :    "     \
   lalt 102d Z    X    C    V    B    N    M    <    >    ?              bspc
   lctl wkup @winum @sctl            \_        @sym @shel  rctl      back up   fwd
                                                                    left down rght
@@ -128,15 +138,15 @@ ln #(l n \( )
 
 
 ;; Easy Acess Symbols
-;; # is £
-;; ¬ is ~
+;; @ -> "
+;; \ -> #
 (deflayer sym
   _    _    _    _                             _    _    _    _    _    _    _
        _    _    _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
-  _    !    @    #    $    %    ^    &    *    ~   \\    @fslsh _      @ln;
-  _    <    [    {   \(    _    _   \)    }    ]    >    _    _
-  _    _    _    _    _    _    _    _    @slf @ret @arw  _                  bspc
+  _    !    @   @£    $    %    ^    &    *   @~   \\   @\    _      @ln;
+  _    <    [    {   \(    _   @|   \)    }    ]    >    _    _
+  _    _    _    _    _    _    _   @nln  @slf @ret @arw  _                  bspc
   _    lctl    lmet   ralt            bspc             _    _    _         _    _    _
                                                                    _    _    _
 )
@@ -146,9 +156,9 @@ ln #(l n \( )
   _    _    _     _                             _    _    _    _    _    _    _
        _    _     _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _     _    _    _    _    _    _    _    _    _    _         _
-  _    ^    @sqrt @log @ln @sin _    7    8    9    _    _    _         _
-  _    %    *     +    =  @cos _    4    5    6    _    _    _
-  lmet _    /    -     @tan _    _    0    1    2    3    _              bspc
+  _    ^    @sqrt @log @ln @sin  _    7    8    9    _    _    _         _
+  _    >    *     +    =   @cos  @hex 4    5    6    _    _    _
+  <    <    /    -     %   @tan  _    0    1    2    3    _              bspc
   _    lctl    lmet   lalt              _              _    lmet  _         _    _    _
                                                                    _    _    _
 )
@@ -160,7 +170,7 @@ ln #(l n \( )
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
   _    @qut _    _    _    @trm _    _    _    @zot @zin _    _         _
   _    _    _    @opn @ful _    @lft @dwn @up  @rgt _    _    _
-  lmet _    _    _    @cpy @pst _    @pipe @home @updir @vim  @pyth             _
+  lmet _    _    _    @cpy @pst _    @| @home @updir @vim  @pyth             _
   _    lctl    lmet   lalt              _              ralt    _    rctl         _    _    _
                                                                    _    _    _
 )
@@ -172,7 +182,7 @@ ln #(l n \( )
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
   _    @qut _    _    _    @trm _    _    _    @zot @zin _    _         _
   _    _    _    @opn @ful _    left down up   rght _    _    _
-  lmet _    _    _    @cpy @pst _    @pipe @home @updir @vim  @pyth             _
+  lmet _    _    _    @cpy @pst _    @| @home @updir @vim  @pyth             _
   _    lctl    lmet   lalt              _              ralt    _    rctl         _    _    _
                                                                    _    _    _
 )
