@@ -116,7 +116,7 @@ ln #(l n \( )
        f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12      end  pgdn
   grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
   tab  q    w    e    r    t    y    u    i    o    p   \_     ]        ret
-  esc  a    s    d    f    g    h    j    k    l    ;    '     \
+  esc  a    s    d    f    g    h    j    k    l    ;    ret   \
   lalt 102d z    x    c    v    b    n    m    ,    .    /              bspc
   @nav wkup @winum @sctl           spc        @sym @shel  rctl      back up   fwd
                                                                    left down rght
@@ -144,9 +144,9 @@ ln #(l n \( )
   _    _    _    _                             _    _    _    _    _    _    _
        _    _    _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
-  _    !    @   @£    $    %    ^    &    *   @~   \\   @\    _      @ln;
-  _    <    [    {   \(    _   @|   \)    }    ]    >    _    _
-  _    _    _    _    _    _    _   @nln  @slf @ret @arw  _                  bspc
+  _    !    @    '    $    %    ^    &    *   @~   \\   @\    _      @ln;
+  _    <    [    {   \(    "   @|   \)    }    ]    >   @ln;  _
+  _    _    _   @£    _    _    _   @nln  @slf @ret @arw  _                  bspc
   _    lctl    lmet   ralt            bspc             _    _    _         _    _    _
                                                                    _    _    _
 )
