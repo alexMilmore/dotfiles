@@ -29,4 +29,6 @@ ln -s $(pwd)/config/tmate.conf ~/.tmate.conf
 # doom emacs
 
 ### install neovim plugins
-nvim +'PlugInstall --sync' +qa
+# nvim +'PlugInstall --sync' +qa
+nvim +'PackerCompile' +qa
+nvim +'PackerInstall' +qa

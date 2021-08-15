@@ -1,5 +1,16 @@
 -- loads all setup for nvim
 
+-- assure packer has been installed
+local execute = vim.api.nvim_command
+local fn = vim.fn
+
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
+  execute 'packadd packer.nvim'
+end
+
 -- keybindings for basic vim features
 require('keybindings')
 -- configuration for basic vim features
@@ -18,7 +29,7 @@ require('plugin_config/lualine')
 require('plugin_config/diffview')
 
 -- lsp
-require('lspconfig')
-require('plugin_config/lsp')
-require('plugin_config/completion')
+-- require('lspconfig')
+-- require('plugin_config/lsp')
+-- require('plugin_config/completion')
 
