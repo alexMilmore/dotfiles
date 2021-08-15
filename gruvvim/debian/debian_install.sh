@@ -44,6 +44,9 @@ apt install -y firefox
 # shell
 apt install -y zsh
 
+# shell copy
+apt install -y xsel
+
 # view pictures
 apt install -y feh
 
