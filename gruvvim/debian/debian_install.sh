@@ -1,6 +1,18 @@
+#!/bin/bash
 ###########################################################
 #       EVERYTHING YOU SHOULD NEED ON A NEW MACHINE       #
 ###########################################################
+if [[ $EUID -ne 0 ]]; then
+	echo "script must be run as root"
+	exit 1
+fi
+
+echo "which user to install for"
+while :
+do
+	read username
+	id -u $username && break
+done
 
 apt update
 
@@ -17,7 +29,7 @@ apt install -y kitty
 # text editor
 apt install -y neovim
 # neovim plugins
-su amilmore -c sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+su $username -c sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # terminal multiplexor
@@ -52,7 +64,7 @@ curl -sSL https://get.haskellstack.org/ | sh
 ###########################################################
 
 # rust
-su - amilmore -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
+su - $username -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
 
 # haskell
 apt install -y haskell-platform
@@ -74,16 +86,16 @@ pip3 install pynvim
 ###########################################################
 
 # node for language server
-su - amilmore -c "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash"
-su - amilmore 'export NVM_DIR="/home/alex/.nvm"'
-su - amilmore '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
-su - amilmore "nvm install node"
+su - $username -c "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash"
+su - $username 'export NVM_DIR="/home/alex/.nvm"'
+su - $username '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
+su - $username "nvm install node"
 
 # rust language server
-su - amilmore "rustup component add rls rust-analysis rust-src"
+su - $username "rustup component add rls rust-analysis rust-src"
 
 # python language server
-su - amilmore "npm install -g pyright"
+su - $username "npm install -g pyright"
 
 # c/c++ language server
 # TODO
@@ -99,16 +111,16 @@ su - amilmore "npm install -g pyright"
 apt install -y nmap
 
 # fuzzy finder
-su - amilmore -c "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
-su - amilmore -c "~/.fzf/install"
+su - $username -c "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
+su - $username -c "~/.fzf/install"
 
 # tmate, tmux shared terminal session
 apt install -y tmate
 
 # doom emacs
 apt install -y emacs
-sy - amilmore -c "git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d"
-sy - amilmore -c "~/.emacs.d/bin/doom install"
+sy - $username -c "git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d"
+sy - $username -c "~/.emacs.d/bin/doom install"
 
 # latex
 apt install -y texlive
@@ -127,16 +139,16 @@ apt install -y dhcpcd5
 # terminal prompt
 apt install -y libssl-dev
 apt install -y pkg-config
-su - amilmore -c "~/.cargo/bin/cargo install starship"
+su - $username -c "~/.cargo/bin/cargo install starship"
 
 # better cat (pretty colours)
-su - amilmore -c "~/.cargo/bin/cargo install bat"
+su - $username -c "~/.cargo/bin/cargo install bat"
 
 # better grep (faster)
-su - amilmore -c "~/.cargo/bin/cargo install ripgrep"
+su - $username -c "~/.cargo/bin/cargo install ripgrep"
 
 # better hd (pretty colours)
-su - amilmore -c "~/.cargo/bin/cargo install hexyl"
+su - $username -c "~/.cargo/bin/cargo install hexyl"
 
 ###########################################################
 #                         FUN                             #
@@ -156,3 +168,5 @@ apt install -y figlet
 
 # rainbow terminal output
 apt install -y lolcat
+
+exit 0
