@@ -1,26 +1,32 @@
-#!/bin/sh
+#!/bin/bash
 
-# copy config files to .config
-cp -r ../config/. ~/.config/.
+### symlinks for config files in .config
+declare -a configs=("i3" "kitty" "kmonad" "nvim")
 
-# install neovim plugins
-nvim +'PlugInstall --sync' +qa
+for item in ${configs[@]}
+do
+    rm -r ~/.config/$item
+    ln -s $(pwd)/config/$item ~/.config/$item
+done
 
-### symlings for config files
+### symlinks for config files outside of .config
 # bash
 rm ~/.bashrc
-ln -s ~/.config/bash/bashrc ~/.bashrc
+ln -s $(pwd)/config/bash/bashrc ~/.bashrc
 
 # zshell
 rm ~/.zshrc
-ln -s ~/.config/zsh/zshrc ~/.zshrc
+ln -s $(pwd)/config/zsh/zshrc ~/.zshrc
 
 # tmux
 rm ~/.tmux.conf
-ln -s ~/.config/tmux.conf ~/.tmux.conf
+ln -s $(pwd)/config/tmux.conf ~/.tmux.conf
 
 # tmate
 rm ~/.tmate.conf
-ln -s ~/.config/tmate.conf ~/.tmate.conf
+ln -s $(pwd)/config/tmate.conf ~/.tmate.conf
 
 # doom emacs
+
+### install neovim plugins
+nvim +'PlugInstall --sync' +qa
