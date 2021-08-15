@@ -62,6 +62,9 @@ curl -sSL https://get.haskellstack.org/ | sh
 #git clone https://github.com/david-janssen/kmonad.git
 #stack build kmonad
 
+# python virtual environments
+apt install -y python3-venv
+
 ###########################################################
 #                   PROGRAMMING LANGUAGES                 #
 ###########################################################
