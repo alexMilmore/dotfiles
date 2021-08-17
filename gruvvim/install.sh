@@ -65,6 +65,9 @@ curl -sSL https://get.haskellstack.org/ | sh
 # python virtual environments
 apt install -y python3-venv
 
+# tldr common command uses
+apt install -y tldr
+
 ###########################################################
 #                   PROGRAMMING LANGUAGES                 #
 ###########################################################
@@ -99,12 +102,14 @@ su - $username "nvm install node"
 
 # rust language server
 su - $username "rustup component add rls rust-analysis rust-src"
+su - $username "curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer"
+su - $username "chmod +x ~/.local/bin/rust-analyzer"
 
 # python language server
 su - $username "npm install -g pyright"
 
 # c/c++ language server
-# TODO
+apt install -y clangd
 
 # haskell language server
 # TODO
@@ -137,6 +142,21 @@ apt install -y plantuml
 
 # minimal dhcp
 apt install -y dhcpcd5
+
+# docker
+apt install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt update
+apt install docker-ce docker-ce-cli containerd.io
+
 
 ###########################################################
 #                     QUALITY OF LIFE                     #
