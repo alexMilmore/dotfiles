@@ -71,6 +71,7 @@ winum (tap-next (around-next lmet) @num)
 ret #(r e t u r n)
 slf #(s e l f)
 arw #(- >)
+eqarw #(= >)
 ln; #(; ret)
 nln #(@\ n)
 pipe (around ralt `)
@@ -146,7 +147,7 @@ ln #(l n \( )
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
   _    !    @    '    $    %    ^    &    *   @~   \\   @\    _      @ln;
   _    <    [    {   \(    "   @|   \)    }    ]    >   @ln;  _
-  _    _    _   @£    _    _    _   @nln  @slf @ret @arw  _                  bspc
+  _    _    _   @£    _    _    _   @nln  @slf @ret @arw  @eqarw             bspc
   _    lctl    lmet   ralt            bspc             _    _    _         _    _    _
                                                                    _    _    _
 )
