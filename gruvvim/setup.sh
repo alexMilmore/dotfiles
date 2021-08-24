@@ -20,11 +20,11 @@ ln -s $(pwd)/config/zsh/zshrc ~/.zshrc
 
 # tmux
 rm ~/.tmux.conf
-ln -s $(pwd)/config/tmux.conf ~/.tmux.conf
+ln -s $(pwd)/config/tmux/tmux.conf ~/.tmux.conf
 
 # tmate
 rm ~/.tmate.conf
-ln -s $(pwd)/config/tmate.conf ~/.tmate.conf
+ln -s $(pwd)/config/tmate/tmate.conf ~/.tmate.conf
 
 # doom emacs
 
