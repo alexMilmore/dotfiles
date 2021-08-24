@@ -1,6 +1,7 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
+-- Make sure packer exists
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -29,6 +30,7 @@ local function require_plugin(plugin)
 end
 
 vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
+-- require("packer").use { 'ms-jpq/coq_nvim', branch = 'coq'}
 
 return require("packer").startup(
     function(use)
@@ -81,13 +83,17 @@ return require("packer").startup(
         use "nvim-treesitter/nvim-treesitter"
 
         -- language server
-        use "neovim/nvim-lspconfig.git"
+        use "neovim/nvim-lspconfig"
 
         -- autocomplete
         use "nvim-lua/completion-nvim"
 
         -- linter
-	    use "mfussenegger/nvim-lint.git"
+	    use "mfussenegger/nvim-lint"
+
+        -- code completion
+        use { 'ms-jpq/coq_nvim', branch = 'coq'}
+        use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
 
         -- nvim in the browser
         -- Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }

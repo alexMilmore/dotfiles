@@ -53,3 +53,6 @@ local servers = { "pyright", "rust_analyzer", "clangd" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = require'completion'.on_attach }
 end
+
+-- dummy lsp server for practice
+-- nvim_lsp["blacklist-server"].setup{}

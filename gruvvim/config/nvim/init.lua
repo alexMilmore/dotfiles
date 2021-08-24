@@ -29,7 +29,15 @@ require('plugin_config/lualine')
 require('plugin_config/diffview')
 
 -- lsp
--- require('lspconfig')
--- require('plugin_config/lsp')
+require('lspconfig')
+-- require('coq_nvim')
+require('plugin_config/lsp')
+-- start completion
 -- require('plugin_config/completion')
+require('coq')
+require("packer").use { 'ms-jpq/coq_nvim', branch = 'coq',
+event = 'VimEnter',
+config = 'vim.api.nvim_command("COQnow")'}
+-- vim.api.nvim_command('COQnow')
+-- vim.cmd('COQnow')
 
