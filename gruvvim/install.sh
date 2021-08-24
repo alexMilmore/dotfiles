@@ -17,6 +17,16 @@ done
 apt update
 
 ###########################################################
+#                   PROGRAMMING LANGUAGES                 #
+###########################################################
+
+# rust
+su - $username -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
+
+# haskell
+apt install -y haskell-platform
+
+###########################################################
 #                        ESSENTIALS                       #
 ###########################################################
 
@@ -24,7 +34,11 @@ apt update
 apt install -y curl
 
 # terminal emulator
+# kitty
 apt install -y kitty
+# alacritty
+get install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+su - $username -c "~/.cargo/bin/cargo install alacritty"
 
 # text editor
 apt install -y neovim
@@ -67,16 +81,6 @@ apt install -y python3-venv
 
 # tldr common command uses
 apt install -y tldr
-
-###########################################################
-#                   PROGRAMMING LANGUAGES                 #
-###########################################################
-
-# rust
-su - $username -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
-
-# haskell
-apt install -y haskell-platform
 
 ###########################################################
 #                      PYTHON PACKAGES                    #

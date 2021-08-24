@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### symlinks for config files in .config
-declare -a configs=("i3" "kitty" "kmonad" "nvim")
+declare -a configs=("i3" "kitty" "alacritty" "kmonad" "nvim")
 
 for item in ${configs[@]}
 do
