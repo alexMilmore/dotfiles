@@ -157,8 +157,8 @@ ln #(l n \( )
   _    _    _     _                             _    _    _    _    _    _    _
        _    _     _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _     _    _    _    _    _    _    _    _    _    _         _
-  _    ^    @sqrt @log @ln @sin  _    7    8    9    _    _    _         _
-  _    <    *     +    =   @cos  @hex 4    5    6    _    _    _
+  _    ^    @sqrt @log @ln @sin  @hex 7    8    9    _    _    _         _
+  _    <    *     +    =   @cos  .    4    5    6    _    _    _
   >    >    /    -     %   @tan  _    0    1    2    3    _              bspc
   _    lctl    lmet   lalt              _              _    lmet  _         _    _    _
                                                                    _    _    _
