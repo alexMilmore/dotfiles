@@ -1,3 +1,6 @@
 [submodule "gruvvim/config/zsh/plugins/zsh-syntax-highlighting"]
 	path = gruvvim/config/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "gruvvim/config/zsh/plugins/zsh-autocomplete"]
+	path = gruvvim/config/zsh/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete.git

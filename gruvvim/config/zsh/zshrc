@@ -66,3 +66,4 @@ export NVM_DIR="$HOME/.nvm"
 #                         PLUGINS                         #
 ###########################################################
 . ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. ~/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
