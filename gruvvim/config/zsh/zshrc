@@ -52,6 +52,7 @@ alias vim="nvim"
 alias cat="bat"
 alias hd="hexyl"
 alias doom="emacsclient"
+alias :q="exit"
 
 ###########################################################
 #                         NODE JS                         #
@@ -66,4 +67,7 @@ export NVM_DIR="$HOME/.nvm"
 #                         PLUGINS                         #
 ###########################################################
 . ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+zstyle ':autocomplete:*' widget-style menu-select
+zstyle ':autocomplete:*' fzf-completion yes
 . ~/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
