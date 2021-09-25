@@ -60,7 +60,6 @@ sym (layer-toggle sym)
 num (layer-toggle num)
 shel (layer-toggle shel)
 caps (layer-toggle caps)
-nav (layer-toggle nav)
 
 ;; normal mode aliases
 ;; sctl (tap-next (around-next lctl) lshift)
@@ -87,10 +86,6 @@ vim #(v i m spc)
 pst (around lshift ins)
 cpy (around lshift (around lalt c))
 ful (multi-tap 200 (around lalt f) (around lmet f))
-lft (multi-tap 200 (around lalt h) (around lmet h))
-dwn (multi-tap 200 (around lalt j) (around lmet j))
-up  (multi-tap 200 (around lalt k) (around lmet k))
-rgt (multi-tap 200 (around lalt l) (around lmet l))
 qut (around lmet (around lshift q))
 trm (around lmet ret)
 opn (around lmet d)
@@ -119,7 +114,7 @@ ln #(l n \( )
   tab  q    w    e    r    t    y    u    i    o    p   \_     ]        ret
   esc  a    s    d    f    g    h    j    k    l    ;    ret   \
   lalt 102d z    x    c    v    b    n    m    ,    .    /              bspc
-  @nav wkup @winum @sctl           spc        @sym @shel  rctl      back up   fwd
+  _ wkup @winum @sctl           spc        @sym @shel  rctl      back up   fwd
                                                                    left down rght
 )
 
@@ -145,9 +140,9 @@ ln #(l n \( )
   _    _    _    _                             _    _    _    _    _    _    _
        _    _    _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
-  _    !    @    '    $    %    ^    &    *   @~   \\   @\    _      @ln;
-  _    <    [    {   \(    "   @|   \)    }    ]    >   @ln;  _
-  _    _    _   @£    _    _    _   @nln  @slf @ret @arw  @eqarw             bspc
+  _    !    @    '    $    %    ^    &    *   @~   \\   @\    _         _
+  _    <    [    {   \(    "   @|   \)    }    ]    >    _    _
+  _    _    _   @£    @updir @home _   @nln @slf @ret @arw  @eqarw             bspc
   _    lctl    lmet   ralt            bspc             _    _    _         _    _    _
                                                                    _    _    _
 )
@@ -157,9 +152,9 @@ ln #(l n \( )
   _    _    _     _                             _    _    _    _    _    _    _
        _    _     _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _     _    _    _    _    _    _    _    _    _    _         _
-  _    ^    @sqrt @log @ln @sin  @hex 7    8    9    _    _    _         _
-  _    <    *     +    =   @cos  .    4    5    6    _    _    _
-  >    >    /    -     %   @tan  _    0    1    2    3    _              bspc
+  _    ^    @sqrt @log @ln @sin  @hex 7    8    9    e    f    _         _
+  _    <    *     +    =   @cos  .    4    5    6    c    d    _
+  >    >    /    -     %   @tan  _    0    1    2    3    a              b
   _    lctl    lmet   lalt              _              _    lmet  _         _    _    _
                                                                    _    _    _
 )
@@ -169,22 +164,9 @@ ln #(l n \( )
   _    _    _    _                             _    _    _    _    _    _    _
        _    _    _    _    _    _    _    _    _    _    _    _         _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _         _
-  _    @qut _    _    _    @trm _    _    _    @zot @zin _    _         _
-  _    _    _    @opn @ful _    @lft @dwn @up  @rgt _    _    _
-  lmet _    _    _    @cpy @pst _    @| @home @updir @vim  @pyth             _
+  _    _    _    _    _    _    _    _    _    @zot @zin _    _         _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  lmet _    _    _    @cpy @pst _    _    _    _     @vim  @pyth             _
   _    lctl    lmet   lalt              _              ralt    _    rctl         _    _    _
                                                                    _    _    _
 )
-
-;; Navigating (work in progress)
-(deflayer nav
-  _    _    _    _                             _    _    _    _    _    _    _
-       _    _    _    _    _    _    _    _    _    _    _    _         _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _         _
-  _    @qut _    _    _    @trm _    _    _    @zot @zin _    _         _
-  _    _    _    @opn @ful _    left down up   rght _    _    _
-  lmet _    _    _    @cpy @pst _    @| @home @updir @vim  @pyth             _
-  _    lctl    lmet   lalt              _              ralt    _    rctl         _    _    _
-                                                                   _    _    _
-)
-
