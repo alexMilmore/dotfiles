@@ -131,6 +131,8 @@ su - $username -c "~/.fzf/install"
 
 # tmate, tmux shared terminal session
 apt install -y tmate
+# tmux vim navigation
+sudo cp $(pwd)/config/tmux/nvim-tmux-navigation /usr/local/bin/nvim-tmux-navigation
 
 # doom emacs
 apt install -y emacs

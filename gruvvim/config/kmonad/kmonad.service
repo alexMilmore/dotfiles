@@ -1,0 +1,8 @@
+[Unit]
+Description=Kmonad service
+
+[Service]
+ExecStart=kmonad /etc/systemd/kmonad.conf
+
+[Install]
+WantedBy=multi-user.target

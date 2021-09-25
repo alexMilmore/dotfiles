@@ -21,7 +21,6 @@ ln -s $(pwd)/config/zsh/zshrc ~/.zshrc
 # tmux
 rm ~/.tmux.conf
 ln -s   $(pwd)/config/tmux/tmux.conf ~/.tmux.conf
-sudo cp $(pwd)/config/tmux/nvim-tmux-navigation /usr/local/bin/nvim-tmux-navigation
 
 # tmate
 rm ~/.tmate.conf
