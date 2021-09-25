@@ -30,7 +30,8 @@ vim.api.nvim_set_keymap('n', '<M-k>', '<C-W>k', { noremap = true })
 vim.api.nvim_set_keymap('n', '<M-l>', '<C-W>l', { noremap = true })
 -- open split windows
 vim.api.nvim_set_keymap('n', '<M-/>', '<C-W>v', { noremap = true })
-vim.api.nvim_set_keymap('n', '<M-->', '<C-W>s', { noremap = true })
+vim.api.nvim_set_keymap('n', '<M-.>', '<C-W>s', { noremap = true })
+
 -- resize TODO this is still kinda annoying
 vim.api.nvim_set_keymap('n', '<M-H>', '<C-W>>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<M-J>', '<C-W>-', { noremap = true })

@@ -43,7 +43,7 @@ nnoremap <M-k> <C-W>k
 nnoremap <M-l> <C-W>l
 "open split windows
 nnoremap <M-/> <C-W>v
-nnoremap <M--> <C-W>s
+nnoremap <M-.> <C-W>s
 "resize TODO this is still kinda annoying
 nnoremap <M-H> <C-W>>
 nnoremap <M-J> <C-W>-
