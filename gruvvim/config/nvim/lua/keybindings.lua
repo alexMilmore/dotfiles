@@ -11,8 +11,14 @@ vim.g.mapleader = " "
 vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true })
 -- write & quit
 vim.api.nvim_set_keymap('n', '<leader>q', ':wq<CR>', { noremap = true })
--- open terminal
+
+-- open terminal in new tab
 vim.api.nvim_set_keymap('n', '<leader>tt', ':tabnew<CR>:terminal<CR>', { noremap = true })
+-- open terminal in new split
+vim.api.nvim_set_keymap('n', '<leader>t/', ':vsp<CR><C-W>l:terminal<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>t.', ':sp<CR><C-W>j:terminal<CR>', { noremap = true })
+-- escape terminal
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
 
 -- tabs
 vim.api.nvim_set_keymap('n', '<M-u>', ':tabprevious<CR>', { noremap = true })
