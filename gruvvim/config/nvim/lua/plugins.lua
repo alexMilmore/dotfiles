@@ -80,7 +80,7 @@ return require("packer").startup(
         use 'tweekmonster/startuptime.vim'
 
         -- treesitter
-        use "nvim-treesitter/nvim-treesitter"
+        use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
         -- language server
         use "neovim/nvim-lspconfig"

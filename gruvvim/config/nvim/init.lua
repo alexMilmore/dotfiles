@@ -27,6 +27,7 @@ require('plugin_config/nerdtree')
 require('plugin_config/maximizer')
 require('plugin_config/lualine')
 require('plugin_config/diffview')
+require('plugin_config/treesitter')
 
 -- lsp
 require('lspconfig')
