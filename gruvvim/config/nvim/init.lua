@@ -32,5 +32,6 @@ require('plugin_config/treesitter')
 -- lsp
 require('lspconfig')
 require('plugin_config/lsp')
+require('plugin_config/nvim-lint')
 -- start completion
 require('plugin_config/coq')
