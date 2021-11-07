@@ -40,6 +40,8 @@ return require("packer").startup(
         -- Pretty colours
         use "morhetz/gruvbox"
         use "pineapplegiant/spaceduck" -- { 'branch': 'main' }
+        -- generates error colours from colour scheme
+        use "folke/lsp-colors.nvim"
 
         -- Icons
         use "kyazdani42/nvim-web-devicons"
