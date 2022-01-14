@@ -88,7 +88,7 @@ apt install -y tldr
 
 # install pip
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py | python
-apt install python3-pip
+apt install -y python3-pip
 
 # allows neovim to use python plugins
 pip install pynvim
