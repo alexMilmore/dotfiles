@@ -62,13 +62,13 @@ return require("packer").startup(
         use "sindrets/diffview.nvim"
 
         -- syntax highlighting for toml
-        use 'cespare/vim-toml'
+        -- use 'cespare/vim-toml'
 
         -- maximise a vim split
         use 'szw/vim-maximizer'
 
         -- vim debugger
-        use 'puremourning/vimspector'
+        -- use 'puremourning/vimspector'
 
         -- vim fuzzy finder
         use 'nvim-lua/popup.nvim'

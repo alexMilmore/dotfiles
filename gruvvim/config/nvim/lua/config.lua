@@ -5,11 +5,11 @@
 -- set noerrorbells
 
 -- tab displayed as 4 spaces
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
 
 -- shift command shifts 4 spaces
--- set shiftwidth=4
+vim.o.shiftwidth=2
 
 -- convert tabs to spaces
 vim.o.expandtab = true

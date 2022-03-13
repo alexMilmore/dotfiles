@@ -22,7 +22,7 @@ require('plugins')
 -- vim plugin config
 require('plugin_config/colourscheme')
 require('plugin_config/telescope')
-require('plugin_config/vimspector')
+-- require('plugin_config/vimspector')
 require('plugin_config/nerdtree')
 require('plugin_config/maximizer')
 require('plugin_config/lualine')

@@ -1,5 +1,5 @@
 
----# custom bindings for default nvim
+
 
 -- set mapleader
 vim.api.nvim_set_keymap('n', '<leader>q', ':wq<CR>', { noremap = true })
@@ -46,3 +46,8 @@ vim.api.nvim_set_keymap('n', '<M-L>', '<C-W><', { noremap = true })
 -- open file into terminal
 vim.api.nvim_set_keymap('n', '<leader>o-', '<C-W>f', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>o/', '<C-W>vgf', { noremap = true })
+
+-- cargo
+vim.api.nvim_set_keymap('n', '<leader>cc', ':!cargo check<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>cr', ':!cargo run<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>ct', ':!cargo test<CR>', { noremap = true })
