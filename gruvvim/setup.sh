@@ -1,8 +1,9 @@
 #!/bin/bash
 
 ### symlinks for config files in .config
-declare -a configs=("i3" "kitty" "alacritty" "kmonad" "nvim" "zsh")
+declare -a configs=("i3" "kitty" "alacritty" "kmonad" "nvim" "zsh" "git")
 
+# symlink .config directories
 for item in ${configs[@]}
 do
     rm -r ~/.config/$item
@@ -25,6 +26,10 @@ ln -s   $(pwd)/config/tmux/tmux.conf ~/.tmux.conf
 # tmate
 rm ~/.tmate.conf
 ln -s $(pwd)/config/tmate/tmate.conf ~/.tmate.conf
+
+# git
+rm ~/.gitconfig
+ln -s $(pwd)/config/git/gitconfig ~/.gitconfig
 
 # doom emacs
 

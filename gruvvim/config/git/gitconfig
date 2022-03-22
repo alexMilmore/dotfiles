@@ -1,0 +1,6 @@
+[user]
+	email = alex.milmore@unipart.io
+	name = amilmore
+
+[alias]
+	clone-for-worktrees = "!sh $HOME/.config/git/git-clone-for-worktrees.sh"
