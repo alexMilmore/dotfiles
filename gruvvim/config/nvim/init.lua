@@ -28,6 +28,7 @@ require('plugin_config/maximizer')
 require('plugin_config/lualine')
 require('plugin_config/diffview')
 require('plugin_config/treesitter')
+require('plugin_config/worktree')
 
 -- lsp
 require('lspconfig')

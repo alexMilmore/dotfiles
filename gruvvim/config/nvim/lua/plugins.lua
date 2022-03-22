@@ -97,6 +97,9 @@ return require("packer").startup(
         use { 'ms-jpq/coq_nvim', branch = 'coq'}
         use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
 
+        -- git worktrees
+        use "ThePrimeagen/git-worktree.nvim"
+
         -- nvim in the browser
         -- Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
