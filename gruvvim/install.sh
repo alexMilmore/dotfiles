@@ -82,6 +82,13 @@ apt install -y python3-venv
 # tldr common command uses
 apt install -y tldr
 
+# ffmpeg allows firefox to play certain video codecs
+# among many other things
+apt install -y ffmpeg
+
+# managing file archives
+apt install -y atool
+
 ###########################################################
 #                      PYTHON PACKAGES                    #
 ###########################################################
