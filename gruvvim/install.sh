@@ -40,12 +40,6 @@ apt install -y kitty
 get install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 su - $username -c "~/.cargo/bin/cargo install alacritty"
 
-# text editor
-apt install -y neovim
-# neovim plugins
-su $username -c sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
 # terminal multiplexor
 apt install -y tmux
 
