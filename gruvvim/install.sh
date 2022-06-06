@@ -83,6 +83,9 @@ apt install -y ffmpeg
 # managing file archives
 apt install -y atool
 
+# cmake required for building other things here
+apt install -y cmake
+
 ###########################################################
 #                      PYTHON PACKAGES                    #
 ###########################################################
