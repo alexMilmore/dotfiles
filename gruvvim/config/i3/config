@@ -245,3 +245,4 @@ client.urgent           $red $red $white $red $red
 exec --no-startup-id i3-msg 'workspace 1:General; exec /usr/bin/kitty'
 exec --no-startup-id i3-msg 'workspace 2:Web; exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace 3:Code; exec /usr/bin/kitty'
+exec --no-startup-id i3-msg 'workspace 9:Code; exec /usr/bin/kitty -e htop'
