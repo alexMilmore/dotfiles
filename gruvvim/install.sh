@@ -17,6 +17,14 @@ done
 apt update
 
 ###########################################################
+#                      INSTALLER DEPS                     #
+###########################################################
+
+apt install -y curl
+apt install -y build-essential
+apt install -y cmake
+
+###########################################################
 #              ANNOYING INTERACTIVE INSTALLS              #
 ###########################################################
 
@@ -34,8 +42,6 @@ su - $username -c "~/.fzf/install"
 
 # rust
 su - $username -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
-# add cargo to path for later installs
-PATH=$PATH:/home/$username/.cargo/bin
 
 # haskell
 apt install -y haskell-platform
@@ -43,9 +49,6 @@ apt install -y haskell-platform
 ###########################################################
 #                        ESSENTIALS                       #
 ###########################################################
-
-# I'm amazed curl isn't in debian
-apt install -y curl
 
 # terminal emulator
 # kitty
