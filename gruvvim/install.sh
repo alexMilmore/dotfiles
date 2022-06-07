@@ -17,11 +17,25 @@ done
 apt update
 
 ###########################################################
+#              ANNOYING INTERACTIVE INSTALLS              #
+###########################################################
+
+# someday I'll make this fully headless, but that day is not today
+# wireshark
+apt install -y wireshark
+
+# fuzzy finder
+su - $username -c "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
+su - $username -c "~/.fzf/install"
+
+###########################################################
 #                   PROGRAMMING LANGUAGES                 #
 ###########################################################
 
 # rust
 su - $username -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
+# add cargo to path for later installs
+PATH=$PATH:/home/$username/.cargo/bin
 
 # haskell
 apt install -y haskell-platform
@@ -87,11 +101,10 @@ apt install -y atool
 apt install -y cmake
 
 # latest version of neovim, apt version is very outdated
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage
-mkdir -p ~/.local/bin/
-mv ./nvim.appimage ~/.local/bin/nvim
+su - $username -c "curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage"
+su - $username -c "chmod u+x nvim.appimage"
+su - $username -c "mkdir -p ~/.local/bin/"
+su - $username -c "mv ./nvim.appimage ~/.local/bin/nvim"
 
 
 ###########################################################
@@ -137,10 +150,6 @@ apt install -y clangd
 # network mapping tool
 apt install -y nmap
 
-# fuzzy finder
-su - $username -c "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
-su - $username -c "~/.fzf/install"
-
 # tmate, tmux shared terminal session
 apt install -y tmate
 # tmux vim navigation
@@ -174,9 +183,6 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 apt update
 apt install -y docker-ce docker-ce-cli containerd.io docker-compose
-
-# wireshark
-apt install -y wireshark
 
 
 ###########################################################

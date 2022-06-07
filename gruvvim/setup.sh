@@ -32,12 +32,14 @@ rm ~/.gitconfig
 ln -s $(pwd)/config/git/gitconfig ~/.gitconfig
 
 ### install neovim plugins
-# nvim +'PlugInstall --sync' +qa
-nvim +'PackerCompile' +qa
-nvim +'PackerInstall' +qa
-nvim +'COQdeps' +qa
-nvim +'TSUpdate' +qa
-nvim +'TSInstall python' +qa
-nvim +'TSInstall rust' +qa
-nvim +'TSInstall c++' +qa
-nvim +'TSInstall javascript' +qa
+# these installations are non blocking therefore you cannot use +q
+# this is because it would just quit instantly & not do anything
+nvim --headless \
+  +'PackerCompile'\
+  +'PackerInstall'\
+  +'COQdeps'\
+  +'TSUpdate'\
+  +'TSInstall python'\
+  +'TSInstall rust'\
+  +'TSInstall c++'\
+  +'TSInstall javascript'
