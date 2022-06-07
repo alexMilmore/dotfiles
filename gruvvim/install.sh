@@ -158,11 +158,6 @@ apt install -y tmate
 # tmux vim navigation
 sudo cp $(pwd)/config/tmux/nvim-tmux-navigation /usr/local/bin/nvim-tmux-navigation
 
-# doom emacs
-apt install -y emacs
-sy - $username -c "git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d"
-sy - $username -c "~/.emacs.d/bin/doom install"
-
 # latex
 apt install -y texlive
 apt install -y texlinve-latex-extra
