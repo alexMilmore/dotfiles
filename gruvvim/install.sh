@@ -86,6 +86,14 @@ apt install -y atool
 # cmake required for building other things here
 apt install -y cmake
 
+# latest version of neovim, apt version is very outdated
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+mkdir -p ~/.local/bin/
+mv ./nvim.appimage ~/.local/bin/nvim
+
+
 ###########################################################
 #                      PYTHON PACKAGES                    #
 ###########################################################

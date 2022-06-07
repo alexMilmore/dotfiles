@@ -31,9 +31,13 @@ ln -s $(pwd)/config/tmate/tmate.conf ~/.tmate.conf
 rm ~/.gitconfig
 ln -s $(pwd)/config/git/gitconfig ~/.gitconfig
 
-# doom emacs
-
 ### install neovim plugins
 # nvim +'PlugInstall --sync' +qa
 nvim +'PackerCompile' +qa
 nvim +'PackerInstall' +qa
+nvim +'COQdeps' +qa
+nvim +'TSUpdate' +qa
+nvim +'TSInstall python' +qa
+nvim +'TSInstall rust' +qa
+nvim +'TSInstall c++' +qa
+nvim +'TSInstall javascript' +qa
