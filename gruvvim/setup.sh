@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# set up
+export PATH=~/.local/bin:$PATH
+git submodule update --init
+
 ### symlinks for config files in .config
 declare -a configs=("i3" "kitty" "alacritty" "kmonad" "nvim" "zsh" "git")
 
@@ -36,7 +40,8 @@ ln -s $(pwd)/config/git/gitconfig ~/.gitconfig
 # this is because it would just quit instantly & not do anything
 nvim --headless \
   +'PackerCompile'\
-  +'PackerInstall'\
+  +'PackerInstall'
+nvim --headless \
   +'COQdeps'\
   +'TSUpdate'\
   +'TSInstall python'\

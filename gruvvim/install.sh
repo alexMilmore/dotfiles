@@ -32,6 +32,8 @@ apt install -y cmake
 # wireshark
 apt install -y wireshark
 
+# shell
+apt install -y zsh
 # fuzzy finder
 su - $username -c "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
 su - $username -c "~/.fzf/install"
@@ -65,9 +67,6 @@ apt install -y i3
 
 # web browser
 apt install -y firefox
-
-# shell
-apt install -y zsh
 
 # shell copy
 apt install -y xsel
@@ -156,7 +155,7 @@ apt install -y nmap
 # tmate, tmux shared terminal session
 apt install -y tmate
 # tmux vim navigation
-sudo cp $(pwd)/config/tmux/nvim-tmux-navigation /usr/local/bin/nvim-tmux-navigation
+sudo cp $(pwd)/config/tmux/vim-tmux-navigation /usr/local/bin/vim-tmux-navigation
 
 # latex
 apt install -y texlive
