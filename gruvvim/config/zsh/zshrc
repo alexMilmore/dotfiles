@@ -53,6 +53,7 @@ alias cat="bat"
 alias hd="hexyl"
 alias doom="emacsclient"
 alias :q="exit"
+alias colcon-build="colcon build --cmake-args=DCMAKE_EXPORT_COMPILE_COMMANDS=0N"
 
 ###########################################################
 #                         NODE JS                         #
