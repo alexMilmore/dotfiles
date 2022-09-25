@@ -106,5 +106,13 @@ return require("packer").startup(
         -- plantUML ascii in vim
         -- Plug 'scrooloose/vim-slumlord'
 
+        -- Better lsp diplay
+        use({
+          "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+          config = function()
+            require("lsp_lines").setup()
+          end,
+        })
+
     end
 )

@@ -36,3 +36,6 @@ require('plugin_config/lsp')
 require('plugin_config/nvim-lint')
 -- start completion
 require('plugin_config/coq')
+
+-- better lsp display
+require("plugin_config/lsp_lines")
