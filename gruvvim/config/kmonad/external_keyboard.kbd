@@ -1,0 +1,172 @@
+#| --------------------------------------------------------------------------
+
+                         KMonad: ISO ThinkPad X220 Template
+
+   This file contains US and DE `defsrc' configurations for a ThinkPad X220
+   with an ISO keyboard.  Copy out the `defsrc' layer to start your own
+   keyboard configuration.  Copy out the `deflayer' template to easily start
+   a new layer with matching `transparent' buttons.
+
+;; Template
+(deflayer name
+  _    _    _    _                             _    _    _    _    _    _    _
+       _    _    _    _    _    _    _    _    _    _    _    _         _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _              _
+  _    lctl    lmet   lalt              _              ralt    _    rctl         _    _    _
+                                                                   _    _    _
+)
+
+  -------------------------------------------------------------------------- |#
+
+#| --------------------------------------------------------------------------
+                                   Basic config
+  -------------------------------------------------------------------------- |#
+(defcfg
+  input (device-file "/dev/input/by-path/pci-0000:00:14.0-usb-0:2.1:1.0-event-kbd""/dev/input/by-path/pci-0000:00:14.0-usb-0:2.4.1:1.0-event-kbd")
+  output (uinput-sink "KMonad_keyboard" "")
+  allow-cmd true
+  )
+
+;; US
+(defsrc
+  esc  mute vold volu                          prnt slck pause ins del  home pgup
+       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12      end  pgdn
+  grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [     ]        ret
+  caps a    s    d    f    g    h    j    k    l    ;    '     \
+  lsft 102d z    x    c    v    b    n    m    ,    .    /              rsft
+  wkup lctl lmet lalt           spc            ralt ssrq rctl      back up   fwd
+                                                                   left down rght
+)
+
+#| --------------------------------------------------------------------------
+                                    Aliases
+  -------------------------------------------------------------------------- |#
+;; Aliases
+(defalias
+
+;; symbol hacks
+;; kmonad won't let certain symbols as src layer, so we need these as hacks
+\ (around ralt -)
+~ (around lshift \\)
+| (around ralt `)
+£ (around lsft #)
+
+;; layers
+sym (layer-toggle sym)
+num (layer-toggle num)
+shel (layer-toggle shel)
+caps (layer-toggle caps)
+
+;; normal mode aliases
+;; sctl (tap-next (around-next lctl) lshift)
+sctl (tap-next (around-next lctl) (layer-toggle caps))
+winum (tap-next (around-next lmet) @num)
+
+;; common words
+ret #(r e t u r n)
+slf #(s e l f)
+arw #(- >)
+eqarw #(= >)
+ln; #(; ret)
+nln #(@\ n)
+pipe (around ralt `)
+
+;; caps mode wierdness
+stb (around lsft tab)
+
+;; shell mode aliases
+home #(| /)
+updir #(. . /)
+pyth #(p y t h o n 3 spc)
+vim #(v i m spc)
+pst (around lshift ins)
+cpy (around lshift (around lalt c))
+ful (multi-tap 200 (around lalt f) (around lmet f))
+qut (around lmet (around lshift q))
+trm (around lmet ret)
+opn (around lmet d)
+zin (around lctl +)
+zot (around lctl \_)
+
+;; num aliases
+;; maths functions
+hex #(0 x)
+sin #(s i n \( )
+cos #(c o s \( )
+tan #(t a n \( )
+sqrt #(s q r t \( )
+log #(l o g \( )
+ln #(l n \( )
+)
+
+#| --------------------------------------------------------------------------
+                                   Layers
+  -------------------------------------------------------------------------- |#
+;; Base Keyboard
+(deflayer base
+  caps mute vold volu                          prnt slck pause ins del  home pgup
+       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12      end  pgdn
+  grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
+  tab  q    w    e    r    t    y    u    i    o    p   \_     ]        ret
+  esc  a    s    d    f    g    h    j    k    l    ;    ret   \
+  lalt 102d z    x    c    v    b    n    m    ,    .    /              bspc
+  _ wkup @winum @sctl           spc        @sym @shel  rctl      back up   fwd
+                                                                   left down rght
+)
+
+;; Caps Keyboard
+;; caps is different layer to allow stop underscores breaking shift
+(deflayer caps
+  caps mute vold volu                          prnt slck pause ins del  home pgup
+       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12      end  pgdn
+  grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
+  @stb Q    W    E    R    T    Y    U    I    O    P   \_     ]        ret
+  esc  A    S    D    F    G    H    J    K    L    :    "     \
+  lalt 102d Z    X    C    V    B    N    M    <    >    ?              bspc
+  lctl wkup @winum @sctl            \_        @sym @shel  rctl      back up   fwd
+                                                                   left down rght
+)
+
+
+
+;; Easy Acess Symbols
+;; @ -> "
+;; \ -> #
+(deflayer sym
+  _    _    _    _                             _    _    _    _    _    _    _
+       _    _    _    _    _    _    _    _    _    _    _    _         _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    !    @    '    $    %    ^    &    *   @~   \\   @\    _         _
+  _    <    [    {   \(    "   @|   \)    }    ]    >    _    _
+  _    _    _   @£    @updir @home _   @nln @slf @ret @arw  @eqarw             bspc
+  _    lctl    lmet   ralt            bspc             _    _    _         _    _    _
+                                                                   _    _    _
+)
+
+;; Numpad
+(deflayer num
+  _    _    _     _                             _    _    _    _    _    _    _
+       _    _     _    _    _    _    _    _    _    _    _    _         _    _
+  _    _    _     _    _    _    _    _    _    _    _    _    _         _
+  _    ^    @sqrt @log @ln @sin  @hex 7    8    9    e    f    _         _
+  _    <    *     +    =   @cos  .    4    5    6    c    d    _
+  >    >    /    -     %   @tan  _    0    1    2    3    a              b
+  _    lctl    lmet   lalt              _              _    lmet  _         _    _    _
+                                                                   _    _    _
+)
+
+;; Navigating in the shell
+(deflayer shel
+  _    _    _    _                             _    _    _    _    _    _    _
+       _    _    _    _    _    _    _    _    _    _    _    _         _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    _    _    _    _    _    _    _    _    @zot @zin _    _         _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  lmet _    _    _    @cpy @pst _    _    _    _     @vim  @pyth             _
+  _    lctl    lmet   lalt              _              ralt    _    rctl         _    _    _
+                                                                   _    _    _
+)
