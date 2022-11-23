@@ -75,3 +75,14 @@ alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm $@"
 zstyle ':autocomplete:*' widget-style menu-select
 zstyle ':autocomplete:*' fzf-completion yes
 . ~/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# bun completions
+[ -s "/home/alex/.bun/_bun" ] && source "/home/alex/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
